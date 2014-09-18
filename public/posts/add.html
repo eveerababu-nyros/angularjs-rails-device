@@ -1,0 +1,19 @@
+<form name="addPostForm">
+	<fieldset>
+		<legend>Add a Post</legend>
+		<label>Name:</label>
+		<input name="postname" type="text" placeholder="Type the Post Name..." ng-model="post.name" blacklist="prasad,satya,veeru" required />
+		
+		<span class="help-inline" ng-show="addPostForm.postname.$error.blacklist">
+          The name "{{post.name}}" is already exisited </span>
+		<span ng-show="addPostForm.postname.$error.required" class="help-inline">Required</span>
+		<label>Description</label>
+		<input class="input-xxlarge" type="text" ng-model='post.description'/>
+		<button type="submit" class="btn btn-primary" ng-click="create(post)" ng-disabled="addPostForm.$invalid">Submit</button>
+	</fieldset>
+</form>
+<style>
+	.help-inline{
+		color: red;	
+	}
+</style>

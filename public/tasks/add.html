@@ -1,0 +1,15 @@
+<div class="span4" ng-controller="TaskAddCtrl">
+		<form name="addTaskForm">
+			<fieldset>
+				<select ng-model="task.project_id" ng-options="project.id as project.name for project in projects" required>
+					<option value="">-- choose Project --</option>
+				</select><br/>
+				 <input type="date" id="exampleInput" name="taskscheduledate" ng-model="task.schedule_date"
+       placeholder="yyyy-MM-dd" min="2013-01-01" max="2023-12-31" required /> <br/>
+				<input name="tasktitle" type="text" placeholder="Title" ng-model="task.title" required />
+				<span ng-show="addProjectForm.projectname.$error.required" class="help-inline">Required</span>
+				<input class="input-xxlarge" type="text" ng-model='task.description'/>
+				<button type="submit" class="btn btn-primary" ng-click="create(task)" ng-disabled="addTaskForm.$invalid">Submit</button>
+			</fieldset>
+		</form> 
+	</div>

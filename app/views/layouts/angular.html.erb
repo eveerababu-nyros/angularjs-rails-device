@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="PostCommentRails" ng-controller="AppCtrl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Angular</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= csrf_meta_tags %>
+
+	<style>
+		a:hover {
+			text-decoration: none;
+			cursor: pointer;		
+		}
+	</style>
+</head>
+<body>
+    
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+					<span ng-show="proj">
+	          <a class="brand" href="/#/projects"><i class="icon-home"></i>&nbsp;Todo Application</a>
+					</span>
+					<span ng-hide="proj">			
+	          <a class="brand" href="/"><i class="icon-home"></i>&nbsp;Todo Application</a>
+					</span>
+          <div class="navbar-content">
+            <ul class="nav " ng-show="proj">
+								
+											
+										<li> <a href="/#/posts">Post</a> </li>
+										<li> <a href="/#/projects">Projects</a> </li>
+										<li> <a href="/#/tasks/add"> Create Task </a> </li>
+						</ul>
+						<span ng-show="proj" >
+							<span class="pull-right" ng-controller="RecordCtrl">
+								<a ng-click="logout()" class="pull-right">Logout</a>
+							</span>
+						</span>
+						<span ng-hide="proj">
+								<span class="pull-right"> <a href="/#/users/login" >Login</a> </span>
+						</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+        <%= bootstrap_flash %>
+        <div ng-view></div>
+    </div>
+
+    <%= javascript_include_tag "application" %>
+</body>
+</html>

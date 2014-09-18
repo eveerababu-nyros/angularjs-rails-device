@@ -1,0 +1,29 @@
+<h1>Posts</h1>
+
+<input placeholder = "Search", ng-model="searchText"  class="pull-right" style="margin-top:-36px;margin-right:10%;"/>
+
+<div ng-show = 'posts == 0' class="">
+  No Posts found.
+</div>
+<div ng-hide = 'posts == 0' class="">
+<table class="table table-bordered table-hover">
+		<thead>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th style="text-align:center"> Actions </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="post in posts | filter:searchText ">
+			<td>{{post.name}}</td>
+			<td>{{post.description}}</td>
+			<td> <a href="#/posts/{{post.id}}"> show </a> </td>	
+
+		</tr>
+	</tbody>
+	
+</table>
+</div>
+
+<a href="/#posts/add"  class="btn btn-primary " >Add Post </a>

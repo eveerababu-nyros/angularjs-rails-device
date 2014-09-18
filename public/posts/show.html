@@ -1,0 +1,32 @@
+<div>
+	<p>Post Name: {{post.name}}</p>
+	<p>Post Description: {{post.description}}</p>
+</div>
+<a class='btn' href="#/posts/{{post.id}}/edit">Edit</a>
+<button type="input" class="btn btn-danger" ng-click='remove(post.id)'>Delete</button>
+
+<h1>Comments</h1>
+<div ng-controller="CommentAddCtrl">
+<form name="addCommentForm" >
+	<fieldset>
+		<label>Comment</label>
+		<input type="hidden" name="comment[post_id]" id="comment_post_id" value="{{post.id}}">
+		<input class="input-xxlarge" type="text" ng-model='comment.comment'/>
+		<button type="submit" class="btn btn-primary" ng-click="create(comment)" ng-disabled="addCommentForm.$invalid">Submit</button>
+	</fieldset>
+</form>
+{{test}}
+<table class="table table-hover" >
+		<thead>
+		<tr>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-ng-repeat = "comment2 in comments">
+			<td>{{comment2.comment}}</td>
+		</tr>
+	</tbody>
+	
+</table>
+</div>

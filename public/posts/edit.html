@@ -1,0 +1,12 @@
+<form name="editMovieForm">
+	<fieldset>
+		<legend>Edit {{post.name}}</legend>
+		<label>Name<label>
+		<input name="postname" type="text" placeholder="Enter movie name..." ng-model='post.name' required/>
+		<span ng-show="editPostForm.postname.$error.required" class="help-inline">Required</span>
+		<label>Description</label>
+		<input class="input-xxlarge" type="text" ng-model='post.description'/>
+		<button type="submit" class="btn btn-primary" ng-click='update(post)' ng-disabled="editPostForm.$invalid">Post Movie</button>
+	</fieldset>
+</form>
+<a href="#/posts/{{post.id}}">Back</a>

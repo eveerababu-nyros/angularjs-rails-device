@@ -1,0 +1,48 @@
+<style type="text/css">
+  body {
+    background-color: #FFF;
+  }
+  #main, h2 {
+    color: #898989;
+    font-family: verdana;
+  }
+  h2 {
+    text-align: center;
+    border: none;
+    font-size: 160px;
+    font-weight: normal;
+    margin-bottom: 0;
+    text-transform: none;
+  }
+  .error-message {
+    background: url("<%= asset_path('errors/fall_down.png') %>") top left no-repeat;
+    background-size: 980px;
+    display: block;
+    height: 358px;
+    overflow: hidden;
+    padding-left: 600px;
+    width: 460px;
+  }
+  .error-message p {
+    font-size: 20px;
+  }
+  .error-logo {
+    margin-left: 560px;
+    width: 200px;
+  }
+  h3 {
+    font-size: 38px;
+  }
+</style>
+
+<h2> ooops! </h2>
+<%= image_tag "errors/logo.png", class: "error-logo" %>
+
+<div class="error-message">
+  <h3>ERROR 500</h3>
+
+  <p>The Page you were looking is not available</p>
+
+  <p>Try with correct url</p>
+
+</div>

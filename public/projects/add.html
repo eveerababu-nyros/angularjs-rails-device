@@ -1,0 +1,16 @@
+<form name="addProjectForm">
+	<fieldset>
+		<legend>Add a Project</legend>
+		<label>Name:</label>
+		<input name="projectname" type="text" placeholder="Project Name..." ng-model="project.name" required />
+	  <span ng-show="addProjectForm.projectname.$error.required" class="help-inline">Required</span>
+		<label>Description</label>
+		<input class="input-xxlarge" type="text" ng-model='project.description'/>
+		<button type="submit" class="btn btn-primary" ng-click="create(project)" ng-disabled="addProjectForm.$invalid">Submit</button>
+	</fieldset>
+</form>
+<style>
+	.help-inline{
+		color: red;	
+	}
+</style>

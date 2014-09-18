@@ -1,0 +1,28 @@
+<h1>Projects</h1> 
+
+<div ng-show = 'projects == 0' class="">
+  No Projects found.
+</div>
+<div ng-hide = 'projects == 0' class="">
+<table class="table table-hover">
+		<thead>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th style="text-align:center" colspan="3"> Actions </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="project in projects">
+			<td>{{project.name}}</td>
+			<td>{{project.description}}</td>
+			<td> <a href="#/projects/{{project.id}}"> <img src="/assets/show.png" title="Click to show the Project"> </a>  </td>
+			<td ng-controller="ProjectRemoveCtrl"> <a ng-click="remove(project.id)"> <img src="/assets/delete.png" title="Click to delete the Project"> </a>  </td>
+			<td> <a href="#/projects/{{project.id}}/edit"> <img src="/assets/edit.png" title="Click to Edit this Project"> </a>  </td>	
+		</tr>
+	</tbody>
+	
+</table>
+</div>
+
+<a href="/#projects/add"  class="btn btn-large btn-primary " >Adding New Project </a>

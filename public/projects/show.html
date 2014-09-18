@@ -1,0 +1,22 @@
+<div class="well">
+	<p style="color:black;font-size:16px;"> Project Name: <span style="color:green;font-size:14px;font-weight:800">{{project.name}} </span> </p>
+</div>
+
+<div class="span12">
+		<p style="color:black;font-size:16px;"> Tasks </p>
+	<div class="span7" >
+		<table class="table table-bordered">
+			<tr ng-repeat="task in tasks">
+				<td style="font-weight:700;color:purple;font-size:16px;">  
+						{{task.title}} <br/>
+						<span style="padding-left:40px;font-size:15px;color:gray;">
+									---{{task.description}} 
+						</span>
+					
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="span4">
+	</div>
+</div>
